@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+:root {
+    --fontSize: 14px;
+    --fontColor: #111111;
+    --colorBlue: #0051ff;
+    --colorLightGray: #f1f1f1;
+    --colorDarkGray: #333333;
+}
+
+/******************************************************
+*   body
+******************************************************/
+body {
+    color: var(--fontColor);
+    font-size: var(--fontSize);
+    font-family: 'Yu Gothic UI', 'メイリオ', 'Meiryo', sans-serif;
+}

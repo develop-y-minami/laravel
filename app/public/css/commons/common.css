@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+/******************************************************
+*   サークル表示
+******************************************************/
+.circle { border-radius: 50%; }
+
+/******************************************************
+*   サークル表示の画像
+******************************************************/
+.circleImg {
+    border: solid 1px var(--colorLightGray);
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+}
+
+/******************************************************
+*   情報表示用テーブル
+******************************************************/
+.infoTable {
+    border: solid 1px var(--colorLightGray);
+    border-radius: 3px;
+    font-size: 12px;
+}
+
+.infoTable .row {
+    display: flex;
+    padding: 10px 15px;
+    border-bottom: solid 1px var(--colorLightGray);
+}
+
+.infoTable .row:last-child { border: none; }
+
+.infoTable .head { width: 100px; }

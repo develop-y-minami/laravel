@@ -1,0 +1,215 @@
+@charset "utf-8";
+
+/******************************************************
+*   ページ共通レイアウト
+******************************************************/
+.base {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+
+/******************************************************
+*   共通ヘッダー
+******************************************************/
+.baseHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 15px;
+    width: 100%;
+    height: 55px;
+    border-bottom: solid 1px var(--colorLightGray);
+}
+
+/******************************************************
+*   システム名
+******************************************************/
+.baseHeader .systemName {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--colorBlue);
+    cursor: pointer;
+}
+
+/******************************************************
+*   共通ヘッダー以降の表示エリア
+******************************************************/
+.baseMain {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+}
+
+/******************************************************
+*   左サイド表示エリア
+******************************************************/
+.baseLeft {
+    min-width: 300px;
+    width: 300px;
+    height: 100%;
+    border-right: solid 1px var(--colorLightGray);
+    background-color: var(--colorDarkGray);
+    overflow: auto;
+}
+
+@media screen and (max-width: 500px) {
+    /* モバイル版では非表示に設定 */
+    .baseLeft { display: none; }
+}
+
+/******************************************************
+*   LINE公式アカウント表示エリア
+******************************************************/
+.lineOfficialAccountContainer header {
+    padding: 10px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    color: white;
+    background-color: var(--colorBlue);
+}
+
+.lineOfficialAccountContainer main { background-color: white; }
+
+.lineOfficialAccountContainer .pictureContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    border-bottom: solid 1px var(--colorLightGray);
+}
+
+.lineOfficialAccountContainer .infoTable { border: none; }
+
+/******************************************************
+*   サイドメニュー
+******************************************************/
+.sideMenu { font-size: 13px; }
+
+.sideMenu a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sideMenu a:hover {
+    color: var(--colorBlue) !important;
+    background-color: white;
+}
+
+/* 親メニュー */
+.sideMenu .parent {
+    border-top: solid 1px white;
+}
+
+.sideMenu .parent a {
+    padding: 10px 20px;
+    color: white;
+}
+
+/* 先頭親要素の上線を削除 */
+.sideMenu .parent:first-child { border-top: none; }
+
+/* 子メニュー */
+.sideMenu .child a {
+    padding: 8px 30px;
+    font-size: 12px;
+    color: white;
+}
+
+.sideMenu .child a::before {
+    content: "▶";
+    font-size: 8px;
+    color: var(--colorBlue);
+}
+
+/******************************************************
+*   ページ表示コンテンツ
+******************************************************/
+.baseContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/******************************************************
+*   トップメニュー
+******************************************************/
+.topMenu { display: none; }
+
+@media screen and (max-width: 500px) {
+    /* モバイル版ではトップメニューを表示 */
+    .topMenu {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: var(--colorBlue);
+    }
+
+    .topMenu li { flex-grow: 1; }
+
+    .topMenu a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 15px;
+        font-size: 13px;
+        color: white;
+    }
+
+    .topMenu a:hover {
+        color: var(--colorBlue); 
+        background-color: white;
+    }
+}
+
+/******************************************************
+*   パンくずリスト
+******************************************************/
+.breadcrumbTrail {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: var(--colorBlue);
+}
+
+@media screen and (max-width: 500px) {
+    /* モバイル版では非表示に設定 */
+    .breadcrumbTrail { display: none; }
+}
+
+.breadcrumbTrail a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    min-width: 150px;
+    max-width: 150px;
+    font-size: 13px;
+    color: white;
+}
+
+.breadcrumbTrail a::after {
+    content: "▶";
+    font-size: 8px;
+}
+
+.breadcrumbTrail a:hover {
+    color: var(--colorBlue); 
+    background-color: white;
+}
+
+/******************************************************
+*   各ページ固有のページ表示コンテンツ
+******************************************************/
+.pageContent {
+    flex: 1;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 500px) {
+    /* モバイル版では各ページ表示コンテンツをスクロール可能に設定 */
+    .pageContent { overflow: auto; }
+}
